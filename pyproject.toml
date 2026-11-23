@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "creabrod-digitizer"
+version = "0.1.0"
+description = "Logiciel local de numérisation de broderie"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "PySide6==6.11.2",
+    "pyembroidery==1.5.1",
+    "Pillow==12.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.1.1",
+]
+
+[project.scripts]
+creabrod-digitizer = "main:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
